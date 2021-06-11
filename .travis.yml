@@ -24,6 +24,8 @@ before_deploy:
   - mv springboot-webservice.zip deploy/springboot-webservice.zip
 
 deploy:
+  ...
+
   - provider: codedeploy
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
@@ -35,6 +37,7 @@ deploy:
     application : demo
 
     deployment_group: ask-springboot-webservice
+
     region: ap-northeast-2
     wait_until_deployed: true
 
