@@ -8,8 +8,17 @@ branches:
   only:
     - master
 
+#Travis CI 서버의 HOME!
+cache:
+  directories:
+    - '$HOME/.m2/repository'
+    - '$HOME/.gradle'
+
+
 before_install:
   - chmod +x gradlew
+
+script: "./gradlew clean build"
 
 before_deploy:
   - zip -r ask-springboot-webservice *
