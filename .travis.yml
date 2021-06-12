@@ -2,7 +2,7 @@
 
 language: java
 jdk:
-  - openjdk1.8.0_282
+  - openjdk8
 
 branches:
   only:
@@ -24,4 +24,3 @@ notifications:
   email:
     recipients:
       -tjdrud3632@naver.com
-
