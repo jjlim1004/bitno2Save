@@ -25,9 +25,9 @@ deploy:
 
     bucket: ask-springboot-build
     key : ask-springboot-webservice.zip
-
     bundle_type: zip
     application: ask-springboot-webservice
+
     deployment_group: ask-springboot-group
 
     region: ap-northeast-2
