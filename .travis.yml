@@ -18,7 +18,7 @@ before_deploy:
 
 ...
 deploy:
-    ...
+     ...
   -provider: codedeploy
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
@@ -29,7 +29,6 @@ deploy:
     application: demo
 
     deployment_group: demo-group
-
     region: ap-northeast-2
     wait_until_deployed: true
 
