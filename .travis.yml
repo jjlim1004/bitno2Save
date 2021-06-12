@@ -1,7 +1,8 @@
 #travis
 
 language: java
-jdk: openjdk8
+jdk:
+  - openjdk8
 
 branches:
   only:
@@ -19,18 +20,16 @@ cache:
 script: "./gradlew clean build"
 
 before_deploy:
-  - zip -r springboot-webservice ./*
+  - zip -r ask-springboot-webservice *
   - mkdir -p deploy
-  - mv springboot-webservice.zip deploy/springboot-webservice.zip
+  - mv ask-springboot-webservice.zip deploy/ask-springboot-webservice.zip
 
 deploy:
-      ...
-
   - provider: codedeploy
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
 
-    bucket: ask-springboot-webservice
+    bucket: ask-springboot-build
     key : ask-springboot-webservice.zip
 
     bundle_type: zip
