@@ -19,29 +19,6 @@ cache:
 
 script: "./gradlew clean build"
 
-before_deploy:
-  - zip -r ask-springboot-webservice *
-  - mkdir -p deploy
-  - mv ask-springboot-webservice.zip deploy/ask-springboot-webservice.zip
-
-deploy:
-  - provider: codedeploy
-    access_key_id: $AWS_ACCESS_KEY
-    secret_access_key: $AWS_SECRET_KEY
-
-    bucket: ask-springboot-build
-    key : ask-springboot-webservice.zip
-
-    bundle_type: zip
-    application : demo
-
-    deployment_group: ask-springboot-webservice
-
-    region: ap-northeast-2
-    wait_until_deployed: true
-
-
-
 #CI 실행 완료시 메일로 알람
 notifications:
   email:
