@@ -28,8 +28,8 @@ deploy:
     key : ask-springboot-webservice.zip
 
     bundle_type: zip
-    application: demo
-    deployment_group: ask-springboot-webservice
+    application: ask-springboot-webservice
+    deployment_group: ask-springboot-group
 
     region: ap-northeast-2
     wait_until_deployed: true
