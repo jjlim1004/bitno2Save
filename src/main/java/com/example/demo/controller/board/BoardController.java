@@ -35,7 +35,7 @@ public class BoardController {
     private BoardService service;
 
     @Autowired
-    private ReplyService lreplyService;
+    private ReplyService replyService;
 
     @GetMapping("register")
     public String register(Model model, HttpSession httpSession){
