@@ -18,7 +18,7 @@ before_install:
 script: "./gradlew clean build"
 
 before_deploy:
-  - zip -r ask-springboot-webservice ./*
+  - zip -r ask-springboot-webservice *
   - mkdir -p deploy
   - mv ask-springboot-webservice.zip deploy/ask-springboot-webservice.zip
 
@@ -26,7 +26,6 @@ deploy:
   -provider: s3
    access_key_id: $AWS_ACCESS_KEY
    secret_access_key: $AWS_SECRET_KEY
-
    bucket: ask-springboot-build
    region: ap-northeast-2
    skip_cleanup: true
