@@ -36,8 +36,8 @@ public class AccountController {
 
     @PostMapping("register")
     public String register(AccountDTO account) {
-        service.register(account);
 
+        service.register(account);
         return "redirect:get";
     }
 

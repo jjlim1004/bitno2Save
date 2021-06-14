@@ -20,9 +20,8 @@ before_deploy:
   - mkdir -p deploy
   - mv ask-springboot-webservice.zip deploy/ask-springboot-webservice.zip
 
-...
+
 deploy:
-  - provider: s3
     ...
   - provider: codedeploy
     access_key_id: $AWS_ACCESS_KEY
