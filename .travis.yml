@@ -25,10 +25,10 @@ before_deploy:
   - mkdir -p deploy
   - mv ask-springboot-webservice.zip deploy/ask-springboot-webservice.zip
 
-...
+
 deploy:
-  -provider: s3
      ...
+
   - provider: codedeploy
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
@@ -36,9 +36,9 @@ deploy:
     bucket: ask-springboot-build
     key : ask-springboot-webservice.zip
     bundle_type: zip
-    application: ask-springboot-webservice
+    application: springboot-webservice
 
-    deployment_group: ask-springboot-group
+    deployment_group: springboot-group
     region: ap-northeast-2
     wait_until_deployed: true
 
