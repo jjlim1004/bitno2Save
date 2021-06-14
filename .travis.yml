@@ -27,6 +27,7 @@ before_deploy:
 
 
 deploy:
+
      ...
   - provider: codedeploy
     access_key_id: $AWS_ACCESS_KEY
