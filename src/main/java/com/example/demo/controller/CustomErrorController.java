@@ -14,17 +14,13 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 
 @Controller
-@Slf4j
 public class CustomErrorController implements ErrorController {
 
     private static final String ERROR_PATH = "/error";
 
-
-
     @RequestMapping("/error")
     public String handleError(HttpServletRequest request, Model model) {
         Object status = request.getAttribute(RequestDispatcher.ERROR_STATUS_CODE);
-        HttpStatus httpStatus =HttpStatus.valueOf(Integer.valueOf(status.toString()));
 
       //   model.addAttribute("code", status.toString());
       //  model.addAttribute("msg", httpStatus.getReasonPhrase());
