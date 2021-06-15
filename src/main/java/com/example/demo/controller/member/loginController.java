@@ -160,7 +160,7 @@ public class loginController {
 /*    @PostMapping("/memberCheck")
     @ResponseBody
     public Map<String,Object> memberCheck(@RequestBody Map<String,Object> memberCheck){
-//        Map<String,Object> member
+        Map<String,Object> member
         return null;
     }*/
 
