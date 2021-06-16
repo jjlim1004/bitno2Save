@@ -75,8 +75,8 @@
                         <div class="col-xs-4">
                             <label>주식 수량</label> <input class="form-control" name='stock_count' value='<c:out value="${asset.stock_count}"/>' >
                         </div>
-
-                            <button class='<c:out value="${asset.asset_no}"/>' type="submit" data-oper='remove' name="button" > 삭제하기 </button>
+                            &nbsp;&nbsp;
+                            <button class='<c:out value="${asset.asset_no}"/>' type="submit" data-oper='remove' name="button" id="kill"> 삭제하기 </button>
                             <input type="hidden" name='asset_no', id='asset_no' value='<c:out value="${asset.asset_no}"/>'>
                     </div>
                     </div>
