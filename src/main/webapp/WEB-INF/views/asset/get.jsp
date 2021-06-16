@@ -81,7 +81,7 @@
             <a href="/asset/modify" class="form-control btn btn-primary rounded submit px-3"> 수정 </a>
             &nbsp;&nbsp;&nbsp;
             <br></br>
-            <a href="/" class="form-control btn btn-primary rounded submit px-3"> 뒤로가기 </a>
+            <a href="/main" class="form-control btn btn-primary rounded submit px-3"> 뒤로가기 </a>
 
 
         </div>

@@ -142,7 +142,10 @@
       <div class="panel-body">
         <div class="form-group uploadDiv">
             <input type="file" name='uploadFile' multiple>
+            <br>
+            <br>
         </div>
+
         
         <div class='uploadResult'> 
           <ul>
