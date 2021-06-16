@@ -19,7 +19,6 @@
             <link href="style.css">
 
             <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-
             <link rel="stylesheet" href="/traders/css/open-iconic-bootstrap.min.css">
             <link rel="stylesheet" href="/traders/css/animate.css">
 
