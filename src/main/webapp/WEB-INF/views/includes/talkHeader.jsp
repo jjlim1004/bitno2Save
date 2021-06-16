@@ -59,13 +59,12 @@
 
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a href="/main" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+
                 <li class="nav-item"><a href="/board/list" class="nav-link">Board</a></li>
                 <li class="nav-item"><a href="services.html" class="nav-link">Gallery</a></li>
                 <li class="nav-item"><a href="blog.html" class="nav-link">News</a></li>
                 <li class="nav-item"><a href="/room" class="nav-link">STockTalk</a></li>
-                <li class="nav-item active"><a href="/test" class="nav-link">Test</a></li>
+                <li class="nav-item"><a href="/test" class="nav-link">Test</a></li>
                 <li class="dropdown nav-item"><a class="nav-link" data-toggle="dropdown" href="#">My Page <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="/myPage">내 정보 변경</a></li>

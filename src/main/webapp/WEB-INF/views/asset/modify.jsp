@@ -4,7 +4,25 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@include file="../includes/header.jsp"%>
 
+<style>
 
+#kill{
+    background: #007bff;
+    border: 1px solid #007bff;
+    color: #fff;
+    width: 150px;
+    height: 50px;
+}
+
+.btn.btn-primary {
+    background: #007bff;
+    border: 1px solid #007bff;
+    color: #fff;
+    width: 250px;
+    height: 50px;
+}
+
+</style>
 
 <body>
 
@@ -52,7 +70,8 @@
             <label>주식명</label> <input class="form-control" name='stock_name' value='<c:out value="${asset.stock_name}"/>' >
             <label>1주당 가격</label> <input class="form-control" name='stock_price' value='<c:out value="${asset.stock_price}"/>' >
             <label>주식 수량</label> <input class="form-control" name='stock_count' value='<c:out value="${asset.stock_count}"/>' >
-            <button class='<c:out value="${asset.asset_no}"/>' type="submit" data-oper='remove' name="button"> 삭제하기 </button>
+           &nbsp;&nbsp;
+            <button class='<c:out value="${asset.asset_no}"/>' type="submit" data-oper='remove' name="button" id="kill"> 삭제하기 </button>
             <input type="hidden" name='asset_no', id='asset_no' value='<c:out value="${asset.asset_no}"/>'>
 	</div>
 	<br>
@@ -88,7 +107,7 @@
                          output += "<label>1주당 가격</label> <input class='required' name='stock_price2'  id='stock_price'>&nbsp;";
                          output += "<label>주식 수량</label> <input class='required' name='stock_count2'  id='stock_count'>&nbsp;";
                          output += "<input type='hidden' name = 'member_id' value = '${member.id}'>";
-                         output += "<input type='button' name='cancel' value='삭제하기'>";
+                         output += "<input type='button' name='cancel' id='kill' value='삭제하기'>";
                          output += "  </br></br>"
 
                          var childDiv = document.createElement("div");

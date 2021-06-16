@@ -3480,8 +3480,10 @@ input[type="button"].btn-block {
 
 .navbar-brand {
   display: inline-block;
-  padding-top: 0.3125rem;
-  padding-bottom: 0.3125rem;
+  padding-top: 8.5px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
   margin-right: 1rem;
   font-size: 1.25rem;
   line-height: inherit;
@@ -7994,9 +7996,9 @@ a.text-dark:hover, a.text-dark:focus {
     border-color: #dee2e6; } }
 
 body {
-  font-family: "Poppins", Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   background: #fff;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.8;
   font-weight: 300;
   color: #666666; }
@@ -8052,7 +8054,6 @@ h1, h2, h3, h4, h5,
     font-size: 14px;
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
-    padding-left: 20px;
     padding-right: 20px;
     font-weight: 400;
     color: #000000;
@@ -8183,7 +8184,7 @@ h1, h2, h3, h4, h5,
 
 .navbar-brand {
   font-weight: 900;
-  font-size: 20px; }
+  font-size: 18px; }
 
 .hero-wrap {
   width: 100%;
