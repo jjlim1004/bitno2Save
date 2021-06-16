@@ -4,6 +4,16 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@include file="../includes/boardHeader.jsp"%>
 
+
+<style>
+#regBtn {
+    background: #007bff;
+    border: 1px solid #007bff;
+    color: #fff;
+     width: 60px;
+       height: 40px;}
+</style>
+
 <body>
 
 <section class="hero-wrap hero-wrap-2" style="background-image: url('/traders/images/bg_wave.jpg');" data-stellar-background-ratio="0.5">
@@ -57,7 +67,7 @@
 		<div class="panel panel-default">
 			<div class="panel-heading">
 
-				<button id='regBtn' type="button" class="btn btn-xs pull-right">    Write !  </button>
+				<button id='regBtn' type="button" class="btn btn-xs pull-right">    Write   </button>
 			</div>
 
 			<!-- /.panel-heading -->

@@ -46,7 +46,8 @@
 
 
 <form name="investTest" id="investTest" style="margin-top:50px; margin-left:300px;" width="350px">
-	<h1>투자성향 테스트</h1>
+	<h1 >투자성향 테스트</h1>
+	<br>
 	<h3>1. 당신의 연령대는 어떻게 됩니까?</h3>
 	<div>
 		<p><input class="test" type="radio" name="age" value="12.5"> 19세 이하</p>

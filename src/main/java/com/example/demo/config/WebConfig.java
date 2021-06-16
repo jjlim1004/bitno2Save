@@ -10,6 +10,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -42,11 +43,19 @@ public class WebConfig implements WebMvcConfigurer {
 
     }
 
-        @Override
-        public void extendMessageConverters(List<HttpMessageConverter<?>> converters) {
-            converters.removeIf(v->v.getSupportedMediaTypes().contains(MediaType.APPLICATION_JSON));
-            converters.add(new MappingJackson2HttpMessageConverter());
-        }
+    @Override
+    public void extendMessageConverters(List<HttpMessageConverter<?>> converters) {
+        converters.removeIf(v->v.getSupportedMediaTypes().contains(MediaType.APPLICATION_JSON));
+        converters.add(new MappingJackson2HttpMessageConverter());
+    }
+
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/**")
+//        "http://localhost:8000",
+                .allowedOrigins("http://127.0.0.1:8000","http://192.168.0.31:8000","15.165.141.67:8000")
+                .allowedMethods("*");//.allowedMethods("GET","POST");
+    }
 
 
     @Bean

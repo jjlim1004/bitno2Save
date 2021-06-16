@@ -7999,7 +7999,7 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   background: #fff;
   font-size: 18px;
-  line-height: 1.8;
+/*  line-height: 1.8;*/
   font-weight: 300;
   color: #666666; }
   body.menu-show {
@@ -8858,7 +8858,7 @@ textarea.form-control {
   font-size: 24px; }
 
 .ftco-section {
-  padding: 7em 0;
+  padding: 3em 0;
   position: relative; }
 
 .ftco-no-pt {
