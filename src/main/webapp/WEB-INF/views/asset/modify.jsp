@@ -38,11 +38,6 @@
     </div>
 </section>
 
-<section class="ftco-section ftco-no-pt ftco-no-pb contact-section">
-    </div>
-    </div>
-
-
     <!-- loader -->
     <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
@@ -62,31 +57,49 @@
     <script src="/traders/js/scrollax.min.js"></script>
     <script src="/traders/js/main.js"></script>
 
+<section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <form action="/asset/modify" method="post" id="form">
+                <c:forEach items="${asset}" var="asset">
+                  <div class="form-group row" >
+                    <div class="modify">
+                        <div class="col-xs-4">
+                            <label>주식명</label> <input class="form-control" name='stock_name' value='<c:out value="${asset.stock_name}"/>' >
+                        </div>
+
+                        <div class="col-xs-4">
+                            <label>1주당 가격</label> <input class="form-control" name='stock_price' value='<c:out value="${asset.stock_price}"/>' >
+                        </div>
+
+                        <div class="col-xs-4">
+                            <label>주식 수량</label> <input class="form-control" name='stock_count' value='<c:out value="${asset.stock_count}"/>' >
+                        </div>
+
+                            <button class='<c:out value="${asset.asset_no}"/>' type="submit" data-oper='remove' name="button" > 삭제하기 </button>
+                            <input type="hidden" name='asset_no', id='asset_no' value='<c:out value="${asset.asset_no}"/>'>
+                    </div>
+                    </div>
+                    <br>
+                </c:forEach>
+                          <div id="add" class="modify">
+
+                          </div>
+            </form>
+
+            <button type="submit" data-oper='modify' name="button" class="form-control btn btn-primary rounded submit px-3">수정하기</button>
+            <br></br>&nbsp;&nbsp;&nbsp;
+            <input type="button" name = "plus" id="plus" value="내 주식 추가하기" class="form-control btn btn-primary rounded submit px-3">
+            <br></br>&nbsp;&nbsp;&nbsp;
+            <button type="submit" data-oper='back' id="back" name="button" class="form-control btn btn-primary rounded submit px-3">뒤로가기</button>
+
+        </div>
+    </div>
 </section>
 
-<form action="/asset/modify" method="post" id="form">
-<c:forEach items="${asset}" var="asset">
-	<div class="modify">
-            <label>주식명</label> <input class="form-control" name='stock_name' value='<c:out value="${asset.stock_name}"/>' >
-            <label>1주당 가격</label> <input class="form-control" name='stock_price' value='<c:out value="${asset.stock_price}"/>' >
-            <label>주식 수량</label> <input class="form-control" name='stock_count' value='<c:out value="${asset.stock_count}"/>' >
-           &nbsp;&nbsp;
-            <button class='<c:out value="${asset.asset_no}"/>' type="submit" data-oper='remove' name="button" id="kill"> 삭제하기 </button>
-            <input type="hidden" name='asset_no', id='asset_no' value='<c:out value="${asset.asset_no}"/>'>
-	</div>
-	<br>
-</c:forEach>
-      <div id="add" class="modify">
-
-      </div>
-</form>
-
-
-<button type="submit" data-oper='modify' name="button">수정하기</button>
-<input type="button" name = "plus" id="plus" value="내 주식 추가하기">
-<button type="submit" data-oper='back' id="back" name="button">뒤로가기</button>
 
 </body>
+
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script>
 

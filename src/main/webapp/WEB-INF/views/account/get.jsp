@@ -17,10 +17,6 @@
     </div>
 </section>
 
-<section class="ftco-section ftco-no-pt ftco-no-pb contact-section">
-    </div>
-    </div>
-
 
     <!-- loader -->
     <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
@@ -41,20 +37,82 @@
     <script src="/traders/js/scrollax.min.js"></script>
     <script src="/traders/js/main.js"></script>
 
+<section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-7 col-lg-5">
+                <div class="login-wrap p-4 p-md-5">
+                    <label>나의 계좌번호</label><input type="text" class="form-control rounded-left" value='<c:out value="${account.account_number}"/>' readonly>
+                    <br>
+                    <label>나의 계좌 비밀번호</label><input type="password" class="form-control rounded-left" value='<c:out value="${account.account_pw}"/>' readonly>
+                    <br>
+                    <label>나의 주민번호 앞자리</label><input type="text" class="form-control rounded-left" value='<c:out value="${account.birth}"/>' readonly>
+                    <br>
+                    <label>나의 연락처</label><input type="text" class="form-control rounded-left" value='<c:out value="${account.phone_number}"/>' readonly>
+                    <br>
+                    <label>나의 계좌 잔고</label><input type="text" class="form-control rounded-left" value='<c:out value="${account.balance}"/>' readonly>
+                    <br>
+                    <a href="/account/modify" class="form-control btn btn-primary rounded submit px-3">수정하기</a><br></br>
+                    <a href="/account/deposit" class="form-control btn btn-primary rounded submit px-3">입금하기</a><br></br>
+                    <a href="/account/withdrawal" class="form-control btn btn-primary rounded submit px-3">출금하기</a><br></br>
+                    <a href="/account/transfer" class="form-control btn btn-primary rounded submit px-3">이체하기</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
-<label>나의 계좌번호</label><input type="text" value='<c:out value="${account.account_number}"/>' readonly>
-<br>
-<label>나의 계좌 비밀번호</label><input type="password" value='<c:out value="${account.account_pw}"/>' readonly>
-<br>
-<label>나의 주민번호 앞자리</label><input type="text" value='<c:out value="${account.birth}"/>' readonly>
-<br>
-<label>나의 연락처</label><input type="text" value='<c:out value="${account.phone_number}"/>' readonly>
-<br>
-<label>나의 계좌 잔고</label><input type="text" value='<c:out value="${account.balance}"/>' readonly>
-<br>
-<a href="/account/modify">수정하기</a><br>
-<a href="/account/deposit">입금하기</a><br>
-<a href="/account/withdrawal">출금하기</a><br>
-<a href="/account/transfer">이체하기</a>
 
 </body>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+    var alertTrigger;
+
+        $("#modify").on('click', function(){
+
+            var form = document.getElementById("form");
+            var pwChk = /^[0-9]{4,4}$/;
+            var numberChk = /^[a-z0-9_-]{8,11}$/;
+            var account_pw =  $('input[name="account_pw"]')
+            //console.log( account_pw.val());
+            var phone_number =  $('input[name="phone_number"]')
+
+            if(!account_pw.val()){
+                alert("비밀번호를 입력해 주세요");
+            }
+
+            if(!pwChk.test(account_pw.val())){
+
+                alert("정확한 계좌 비밀번호을 입력해 주세요.");
+                return false;
+            }
+
+            if(!phone_number.val()){
+
+                 alert("연락처를 입력해 주세요");
+            }
+
+            if(!numberChk.test(phone_number.val())){
+
+                alert("연락처를 입력해 주세요.");
+                return false;
+            }
+
+           form.submit(); //정지
+
+           alertTrigger = 1;
+                if(alertTrigger == 1 ){
+                      alert("계좌 수정 완료되었습니다.");
+                 }
+        });
+
+        var form = $("#form");
+
+        $("#delete").on("click", function(){
+            form.attr("action", "/account/remove").attr("method", "post");
+            alertTrigger = 0;
+            form.submit();
+            alert("계좌 삭제 완료되었습니다.");
+        });
+
+</script>
+</html>

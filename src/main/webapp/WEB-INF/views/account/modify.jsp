@@ -18,11 +18,6 @@
     </div>
 </section>
 
-<section class="ftco-section ftco-no-pt ftco-no-pb contact-section">
-    </div>
-    </div>
-
-
     <!-- loader -->
     <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
@@ -42,7 +37,35 @@
     <script src="/traders/js/scrollax.min.js"></script>
     <script src="/traders/js/main.js"></script>
 
-</section>
+<section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-7 col-lg-5">
+                <div class="login-wrap p-4 p-md-5">
+
+                    <form action="/account/modify" method="post" id="form">
+
+                    <label>나의 계좌번호 (변경 불가)</label><input type="text" name='account_number' class="form-control rounded-left" value='<c:out value="${account.account_number}"/>' readonly>
+                    <br>
+                    <label>변경할 계좌 비밀번호 (4자리 입력)</label><input type="text" name='account_pw' class="form-control rounded-left" value='<c:out value="${account.account_pw}"/>' >
+                    <br>
+                    <label>나의 주민번호 (변경 불가)</label><input type="text" name='birth' class="form-control rounded-left" value='<c:out value="${account.birth}"/>' readonly>
+                    <br>
+                    <label>변경할 연락처 (숫자만 입력)</label><input type="text" name='phone_number' class="form-control rounded-left" value='<c:out value="${account.phone_number}"/>' >
+                    <br>
+                    <input type="hidden" name="member_id" value="${member.id}">
+
+                    <button type="submit" id='modify' class="form-control btn btn-primary rounded submit px-3">수정하기</button>
+                    <br></br>
+                    <button type="submit" id="delete" class="form-control btn btn-primary rounded submit px-3">삭제하기</button>
+                    <br><br>
+                    <a href="/account/get" class="form-control btn btn-primary rounded submit px-3">뒤로가기</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+</body>
 
 <form action="/account/modify" method="post" id="form">
 

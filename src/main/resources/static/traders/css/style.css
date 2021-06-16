@@ -8466,7 +8466,7 @@ h1, h2, h3, h4, h5,
           background: #fff; }
 
 .container {
-  max-width: 1300px; }
+  max-width: 960px; }
 
 .bg-light {
   background: #fafafa !important; }
@@ -8834,10 +8834,10 @@ h1, h2, h3, h4, h5,
         display: none; } }
 
 .form-control {
-  height: 40px ;
+  height: 48px ;
   background: #fff ;
   color: #000000 ;
-  font-size: 20px;
+  font-size: 24px;
   -webkit-box-shadow: none ;
   box-shadow: none ;
   border: 1px solid rgba(0, 0, 0, 0.1); }

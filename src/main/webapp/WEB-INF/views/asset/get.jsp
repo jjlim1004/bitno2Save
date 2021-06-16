@@ -4,6 +4,13 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@include file="../includes/header.jsp"%>
 
+<style>
+
+.btn.btn-primary {
+     width: 350px;
+}
+
+</style>
 <body>
 
 <section class="hero-wrap hero-wrap-2" style="background-image: url('/traders/images/bg_wave.jpg');" data-stellar-background-ratio="0.5">
@@ -17,11 +24,6 @@
         </div>
     </div>
 </section>
-
-<section class="ftco-section ftco-no-pt ftco-no-pb contact-section">
-    </div>
-    </div>
-
 
     <!-- loader -->
     <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
@@ -42,29 +44,51 @@
     <script src="/traders/js/scrollax.min.js"></script>
     <script src="/traders/js/main.js"></script>
 
+<section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center">
+
+            <c:forEach items="${asset}" var="asset">
+                <div class="form-group row">
+                    <div class="register">
+                        <div class="col-xs-4">
+                            <label>주식명</label> <input class="form-control" id="ex3" name='stock_name' value='<c:out value="${asset.stock_name}"/>' readonly>
+                        </div>
+                        <div class="col-xs-4">
+                            <label>1주당 가격</label> <input class="form-control" id="ex3" name='stock_price' value='<c:out value="${asset.stock_price}"/>' readonly>
+                        </div>
+                        <div class="col-xs-4">
+                            <label>주식 수량</label> <input class="form-control" id="ex3" name='stock_count' value='<c:out value="${asset.stock_count}"/>' readonly>
+                        </div>
+                    </div>
+                </div>
+                <br>
+            </c:forEach>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <div>
+                <canvas id="myChart" width="650" height="650"></canvas>
+            </div>
+
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <a href="/asset/modify" class="form-control btn btn-primary rounded submit px-3"> 수정 </a>
+            &nbsp;&nbsp;&nbsp;
+            <br></br>
+            <a href="/" class="form-control btn btn-primary rounded submit px-3"> 뒤로가기 </a>
+
+
+        </div>
+    </div>
 </section>
 
-<c:forEach items="${asset}" var="asset">
-	<div class="form-group row" style="margin-top:50px; margin-left:300px;">
-        <div class="register">
-            <div class="col-xs-4">
-                <label>주식명</label> <input class="form-control" id="ex3" name='stock_name' value='<c:out value="${asset.stock_name}"/>' readonly>
-            </div>
-            <div class="col-xs-4">
-                <label>1주당 가격</label> <input class="form-control" id="ex3" name='stock_price' value='<c:out value="${asset.stock_price}"/>' readonly>
-            </div>
-            <div class="col-xs-4">
-                <label>주식 수량</label> <input class="form-control" id="ex3" name='stock_count' value='<c:out value="${asset.stock_count}"/>' readonly>
-            </div>
-        </div>
-	</div>
-	<br>
-</c:forEach>
-
-<div>
-    <canvas id="myChart" width="650" height="650" style="margin-top:50px; margin-left:300px;"></canvas>
-</div>
-
+</body>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -144,11 +168,6 @@ window.onload = function(){
             );
 
 </script>
-
-<a href="/asset/modify"> 수정 </a>
-<a href="/"> 뒤로가기 </a>
-
-</body>
 </html>
 
 

@@ -1,8 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@include file="../includes/header.jsp"%>
 
+<style>
 
+.btn.btn-primary {
+     width: 350px;
+}
+
+</style>
 
 
 <body>
@@ -18,10 +26,6 @@
         </div>
     </div>
 </section>
-
-<section class="ftco-section ftco-no-pt ftco-no-pb contact-section">
-    </div>
-    </div>
 
 
     <!-- loader -->
@@ -43,39 +47,44 @@
     <script src="/traders/js/scrollax.min.js"></script>
     <script src="/traders/js/main.js"></script>
 
-</section>
+<section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center">
 
-<form action="/asset/register" method="post" id="form" style="margin-top:50px; margin-left:300px;">
-
-	<div class="itr" id="asset">
-            <label>주식명</label> <input class="required" name='stock_name' id="stock_name">
-            <label>1주당 가격</label> <input class="required" name='stock_price' id="stock_price">
-            <label>주식 수량</label> <input class="required" name='stock_count' id="stock_count">
-           <input type="hidden" name= "member_id" value = "${member.id}">
-	</div>
-	</br>
-	<div class="itr" id="asset">
-            <label>주식명</label> <input class="required" name='stock_name' id="stock_name">
-            <label>1주당 가격</label> <input class="required" name='stock_price' id="stock_price">
-            <label>주식 수량</label> <input class="required" name='stock_count' id="stock_count">
-            <input type="hidden" name = "member_id" value = "${member.id}">
-	</div>
-	</br>
-	<div class="itr" id="asset">
-            <label>주식명</label> <input class="required" name='stock_name' id="stock_name">
-            <label>1주당 가격</label> <input class="required" name='stock_price' id="stock_price">
-            <label>주식 수량</label> <input class="required" name='stock_count' id="stock_count">
-            <input type="hidden" name = "member_id" value = "${member.id}">
-            <input type="button" name = "plus" id="plus" value="+">
-
-	</div>
-	</br>
-
-    <div id="add" id="asset">
-
+            <form action="/asset/register" method="post" id="form" ">
+                <div class="itr" id="asset">
+                        <label>주식명</label> <input class="required" name='stock_name' id="stock_name" class="form-control rounded-left">
+                        <label>1주당 가격</label> <input class="required" name='stock_price' id="stock_price" class="form-control rounded-left">
+                        <label>주식 수량</label> <input class="required" name='stock_count' id="stock_count" class="form-control rounded-left">
+                       <input type="hidden" name= "member_id" value = "${member.id}">
+                </div>
+                </br>
+                <div class="itr" id="asset">
+                        <label>주식명</label> <input class="required" name='stock_name' id="stock_name">
+                        <label>1주당 가격</label> <input class="required" name='stock_price' id="stock_price">
+                        <label>주식 수량</label> <input class="required" name='stock_count' id="stock_count">
+                        <input type="hidden" name = "member_id" value = "${member.id}">
+                </div>
+                </br>
+                <div class="itr" id="asset">
+                        <label>주식명</label> <input class="required" name='stock_name' id="stock_name">
+                        <label>1주당 가격</label> <input class="required" name='stock_price' id="stock_price">
+                        <label>주식 수량</label> <input class="required" name='stock_count' id="stock_count">
+                        <input type="hidden" name = "member_id" value = "${member.id}">
+                        <input type="button" name = "plus" id="plus" value="+">
+                </div>
+                </br>
+                <div id="add" id="asset">
+                </div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="submit" value="등록하기" class="form-control btn btn-primary rounded submit px-3" width="300px">
+            </form>
+        </div>
     </div>
-<input type="submit" value="등록하기">
-</form>
+</section>
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script>

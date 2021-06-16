@@ -18,10 +18,6 @@
     </div>
 </section>
 
-<section class="ftco-section ftco-no-pt ftco-no-pb contact-section">
-    </div>
-    </div>
-
 
     <!-- loader -->
     <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
@@ -44,21 +40,33 @@
 
 </section>
 
-<form action="/account/register" method="post" id="form">
+<section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-7 col-lg-5">
+                <div class="login-wrap p-4 p-md-5">
 
-<label>사용할 계좌번호</label><input type="text" name='account_number' value='' readonly>
-<br>
-<label>사용할 계좌 비밀번호 4자리 입력</label><input type="text" name='account_pw'>
-<br>
-<label>주민번호 앞자리 6자리 입력</label><input type="text" name='birth'>
-<br>
-<label>연락처 숫자만 입력</label><input type="text" name='phone_number'>
-<br>
-<input type="hidden" name= "member_id" value = "${member.id}">
+                    <form action="/account/register" method="post" id="form">
 
-<input type="submit" value="등록하기">
+                        <label>사용할 계좌번호</label><input type="text" class="form-control rounded-left" name='account_number' value='' readonly>
+                        <br>
+                        <label>사용할 계좌 비밀번호 (4자리 입력)</label><input type="text" class="form-control rounded-left" name='account_pw'>
+                        <br>
+                        <label>주민번호 앞자리 (6자리 입력)</label><input type="text" class="form-control rounded-left" name='birth'>
+                        <br>
+                        <label>연락처 (숫자만 입력)</label><input type="text" class="form-control rounded-left" name='phone_number'>
+                        <br>
+                        <input type="hidden" name= "member_id" value = "${member.id}">
 
-</form>
+                        <input type="submit" class="form-control btn btn-primary rounded submit px-3" value="등록하기">
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 </body>
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -68,10 +76,13 @@
         var n=6;
 
         function generateRandomCode(n) {
-          let str = '';
-          for (let i = 0; i < n; i++) {
-            str += String(Math.floor(Math.random() * 10))
-          }
+
+              let str = '';
+
+              for (let i = 0; i < n; i++) {
+                str += String(Math.floor(Math.random() * 10))
+              }
+
           //console.log(typeof(str));
            $('input[name="account_number"]').val(str);
         }
@@ -81,44 +92,50 @@
     });
 
     $("#form").submit(function(e){
-    e.preventDefault();
+        e.preventDefault();
 
-    var form = document.getElementById("form");
+        var form = document.getElementById("form");
 
-    var pwChk = /^[0-9]{4,4}$/;
-    var birthChk = /^[a-z0-9_-]{6,6}$/;
-    var numberChk = /^[a-z0-9_-]{8,11}$/;
+        var pwChk = /^[0-9]{4,4}$/;
+        var birthChk = /^[a-z0-9_-]{6,6}$/;
+        var numberChk = /^[a-z0-9_-]{8,11}$/;
 
-    var account_pw =  $('input[name="account_pw"]')
+        var account_pw =  $('input[name="account_pw"]')
 
-    //console.log( account_pw.val());
-    var birth =  $('input[name="birth"]')
-    var phone_number =  $('input[name="phone_number"]')
+        //console.log( account_pw.val());
+        var birth =  $('input[name="birth"]')
+        var phone_number =  $('input[name="phone_number"]')
 
-    if(!account_pw.val()){
-        alert("비밀번호를 입력해 주세요");
-    }
+        if(!account_pw.val()){
+            alert("비밀번호를 입력해 주세요");
+        }
 
-    if(!pwChk.test(account_pw.val())){
-        alert("정확한 계좌 비밀번호을 입력해 주세요.");
-        return false;
-    }
-    if(!birth.val()){
-        alert("주민등록번호 앞자리를 입력해 주세요");
-    }
-    if(!birthChk.test(birth.val())){
-        alert("주민등록번호 앞자리를 입력해 주세요.");
-        return false;
-    }
-    if(!phone_number.val()){
-         alert("연락처를 입력해 주세요");
-    }
-    if(!numberChk.test(phone_number.val())){
-        alert("연락처를 입력해 주세요.");
-        return false;
-    }
-   form.submit(); //정지
-   alert("계좌 개설 완료되었습니다.");
+        if(!pwChk.test(account_pw.val())){
+            alert("정확한 계좌 비밀번호을 입력해 주세요.");
+            return false;
+        }
+
+        if(!birth.val()){
+            alert("주민등록번호 앞자리를 입력해 주세요");
+        }
+
+        if(!birthChk.test(birth.val())){
+            alert("주민등록번호 앞자리를 입력해 주세요.");
+            return false;
+        }
+
+        if(!phone_number.val()){
+             alert("연락처를 입력해 주세요");
+        }
+
+        if(!numberChk.test(phone_number.val())){
+            alert("연락처를 입력해 주세요.");
+            return false;
+        }
+
+       form.submit(); //정지
+
+       alert("계좌 개설 완료되었습니다.");
    });
 
 

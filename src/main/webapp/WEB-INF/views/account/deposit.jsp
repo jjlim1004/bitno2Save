@@ -17,9 +17,6 @@
     </div>
 </section>
 
-<section class="ftco-section ftco-no-pt ftco-no-pb contact-section">
-    </div>
-    </div>
 
 
     <!-- loader -->
@@ -43,17 +40,30 @@
 
 </section>
 
-<form action="/account/deposit" method="post" id="form">
+<section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-7 col-lg-5">
+                <div class="login-wrap p-4 p-md-5">
 
-<label>나의 계좌 잔고</label><input type="text" id="balance" name="balance" value='<c:out value="${account.balance}"/>' readonly>
-<br>
-<label>나에게 입금할 금액을 입력하세요</label><input type="text" name="money" id="money">
-<br>
-<input type="hidden" name="member_id" value="${member.id}">
-<br>
+                    <form action="/account/deposit" method="post" id="form">
+                        <label>나의 계좌 잔고</label><input type="text" id="balance" name="balance" class="form-control rounded-left" value='<c:out value="${account.balance}"/>' readonly>
+                        <br>
+                        <label>나에게 입금할 금액을 입력하세요</label><input type="text" name="money" id="money" class="form-control rounded-left">
+                        <br>
+                        <input type="hidden" name="member_id" value="${member.id}">
+                        <button type="submit" class="form-control btn btn-primary rounded submit px-3">입금하기</button><br></br>
+                        <a href="/account/get" class="form-control btn btn-primary rounded submit px-3">뒤로가기</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-<button type="submit">입금 하기</button><br>
-<a href="/account/get">뒤로가기</a>
+
+
+
 </body>
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>

@@ -58,7 +58,7 @@
 
              .top_menu .title {
                text-align: center;
-               color: #bcbdc0;
+               color: #000;
                font-size: 20px;
              }
 
@@ -189,7 +189,7 @@
                width: calc(100% - 40px);
                position: absolute;
                outline-width: 0;
-               color: gray;
+               color: black;
              }
 
              .bottom_wrapper .send_message {
@@ -197,8 +197,8 @@
                height: 50px;
                display: inline-block;
                border-radius: 50px;
-               background-color: #a3d063;
-               border: 2px solid #a3d063;
+               background-color: #007bff;
+               border: 2px solid #007bff;
                color: #fff;
                cursor: pointer;
                transition: all 0.2s linear;
@@ -207,7 +207,7 @@
              }
 
              .bottom_wrapper .send_message:hover {
-               color: #a3d063;
+               color: #007bff;
                background-color: #fff;
              }
 
@@ -236,11 +236,11 @@
 
 
              .sent_msg p {
-                  background: #FFE6CB none repeat scroll 0 0;
+                  background: #007bff none repeat scroll 0 0;
                   border-radius: 3px;
                   font-size: 18px;
                   margin: 15px;
-                  color:#C48843;
+                  color: #ffffff;
                   padding: 5px 10px 5px 12px;
                   width:100%;
             }
