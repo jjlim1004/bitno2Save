@@ -62,7 +62,7 @@
 </div>
 <!-- /.row -->
 
-<div class="row" style="margin-top:50px; margin-left:300px;" width="350px">
+<div class="row">
 	<div class="col-lg-12">
 		<div class="panel panel-default">
 			<div class="panel-heading">

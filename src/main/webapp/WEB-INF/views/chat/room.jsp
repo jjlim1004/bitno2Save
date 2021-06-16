@@ -6,7 +6,7 @@
 
 
 <body>
-    <div class = "container" style="margin-top:50px; margin-left:300px;" width="350px">
+    <div class = "container" style="margin-left:465px;" width="350px">
         <h1>STock Talk!</h1>
         <div id="roomContainer" class="roomContainer">
             <table id="roomList" class="roomList">

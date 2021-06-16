@@ -5,7 +5,9 @@
 <%@include file="../includes/talkHeader.jsp"%>
 
 <body>
-<div class="chat_window" style="margin-top:50px; margin-left:300px;" >
+<div class="row justify-content-center">
+    <div class="chat_window">
+
 		<div class="top_menu">
 			<div class="title">${roomName}</div>
 		</div>
@@ -43,7 +45,7 @@
 	            </div>
 	        </div>
    </div>
-
+</div>
 <script type="text/javascript">
 
     var ws;

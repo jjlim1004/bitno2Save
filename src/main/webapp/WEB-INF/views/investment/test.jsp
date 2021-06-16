@@ -4,6 +4,15 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@include file="../includes/header.jsp"%>
 
+<style>
+.btn.btn-primary {
+    background: #007bff;
+    border: 1px solid #007bff;
+    color: #fff;
+    width: 250px;
+    height: 50px;
+}
+</style>
 
 <body>
 <section class="hero-wrap hero-wrap-2" style="background-image: url('/traders/images/bg_wave.jpg');" data-stellar-background-ratio="0.5">
@@ -110,7 +119,10 @@
             		<p><input class="test" type="radio" name="loss" value="18.7"> 기대수익이 높다면 위험이 높아도 상관하지 않겠다.</p>
             	</div>
     </br>
-    <button type="button" id="result" onclick="sumScore()"> 결과 확인하기 </button>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       <button type="button"  class="form-control btn btn-primary rounded submit px-3" id="result" onclick="sumScore()"> 결과 확인하기 </button>
+       <br>
     </br>
 
 </form>
