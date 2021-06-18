@@ -6,7 +6,7 @@ spring:
 cloud:
   aws:
     s3:
-      bucket: forimg-bucket
+      bucket: ask-springboot-build
     region:
       static: ap-northeast-2
     stack:
