@@ -1,9 +1,7 @@
 package com.example.demo;
 
 import org.mybatis.spring.annotation.MapperScan;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 
 /*root servlet-context 역할*/
@@ -11,9 +9,15 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 @MapperScan(value = "com.example.demo.mapper")
 public class Application {
 
+	public static final String APPLICATION_LOCATIONS ="spring.config.location="
+			+ "classpath:application.yml,"
+			+ "classpath:aws.yml,"
+			+ "classpath:/application.properties";
 
 	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
+		new SpringApplicationBuilder(Application.class)
+				.properties(APPLICATION_LOCATIONS)
+				.run(args);
 	}
 
 }

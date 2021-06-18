@@ -3,7 +3,6 @@ spring:
     livereload:
       enabled: true
 
-
 cloud:
   aws:
     s3:
