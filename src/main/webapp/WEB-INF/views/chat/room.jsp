@@ -25,40 +25,33 @@
     </div>
 
 <script type="text/javascript">
-
     var ws;
     window.onload= function(){
-
         getRoom();
         createRoom();
     }
-
     function getRoom(){
         commonAjax('/getRoom', "", 'POST', function(result){
             createChatingRoom(result);
         });
     }
-
     function createRoom(){
         $("#createRoom").click(function(){
             var msg = { roomName : $("#roomName").val() };
-
             commonAjax('/createRoom', msg, 'POST', function(result){
-                console.log("result"+ result);
+
                 createChatingRoom(result);
             });
-
             $("#roomName").val("");
         });
     }
-
     function goRoom(number, name){
         location.href="/movechating?roomName="+name+"&"+"roomNo="+number; //url이동
     }
-
     function createChatingRoom(result){
         if(result != null){             //roomList가 널이 아니면
             var tag = "<tr><th class='num'>순서</th><th class='room'>방 이름</th><th class='go'></th></tr>";
+            console.log("room.js"+result);
             result.forEach(function(d, idx){
                 var roomName = d.roomName.trim();
                 var roomNo = d.roomNo;

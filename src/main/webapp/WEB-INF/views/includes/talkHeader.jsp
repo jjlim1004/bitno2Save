@@ -59,10 +59,9 @@
 
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
-
                 <li class="nav-item"><a href="/board/list" class="nav-link">Board</a></li>
-                <li class="nav-item"><a href="services.html" class="nav-link">Gallery</a></li>
-                <li class="nav-item"><a href="/stock/stockPage" class="nav-link">News</a></li>
+                <li class="nav-item"><a href="temp1.html" class="nav-link">Gallery</a></li>
+                <li class="nav-item"><a href="temp2.html" class="nav-link">News</a></li>
                 <li class="nav-item"><a href="/room" class="nav-link">STockTalk</a></li>
                 <li class="nav-item"><a href="/test" class="nav-link">Test</a></li>
                 <li class="dropdown nav-item"><a class="nav-link" data-toggle="dropdown" href="#">My Page <span class="caret"></span></a>
@@ -80,7 +79,4 @@
     </div>
 </nav>
 
-
 </head>
-
-

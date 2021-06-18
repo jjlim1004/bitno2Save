@@ -1,11 +1,14 @@
 package com.example.demo.controller;
 
+
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+
 
 @Controller
 @RequestMapping("/")
 public class HomeController {
+
 
     @RequestMapping("main")
     public String main(){
@@ -18,5 +21,6 @@ public class HomeController {
 
         return "investment/test";
     }
+
 
 }
