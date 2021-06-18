@@ -51,7 +51,9 @@ public class ChatController {
     @ResponseBody
     public List<RoomVO> createRoom(@RequestParam HashMap<Object, Object> params){
         String roomName = (String) params.get("roomName");
+        System.out.println(roomName);
         if(roomName != null && !roomName.trim().equals("")){
+
             RoomVO room = new RoomVO();
             room.setRoomNo(++roomNo);
             room.setRoomName(roomName);

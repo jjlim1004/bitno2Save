@@ -51,7 +51,7 @@
     function createChatingRoom(result){
         if(result != null){             //roomList가 널이 아니면
             var tag = "<tr><th class='num'>순서</th><th class='room'>방 이름</th><th class='go'></th></tr>";
-            console.log("room.js"+result);
+            console.log(result);
             result.forEach(function(d, idx){
                 var roomName = d.roomName.trim();
                 var roomNo = d.roomNo;
@@ -70,6 +70,7 @@
             url: url,
             data: parameter,
             type: type,
+            dataType: 'JSON',
             contentType: contentType != null? contentType:'application/x-www-form-urlencoded; charset=UTF-8',
             success: function(result){
                 callback(result);
