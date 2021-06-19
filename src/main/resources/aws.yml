@@ -2,4 +2,4 @@ cloud:
   aws:
     credentials:
       accessKey: AKIAWLRZXN4BSTJ236HY
-      secretKey: edc4yIrGgWOSnnAhThYwMmuj5p4OShMcehYrKyiaA
+      secretKey: edc4yIrGgWOSnnnAhThYwMmuj5p4OShMcehYrKyia
