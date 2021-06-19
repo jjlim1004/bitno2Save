@@ -36,15 +36,19 @@ public class loginController {
         //session 에 회원으로 로그인 한 사람은 session 이름이 loginMember
         SessionMember socialMember = (SessionMember) httpSession.getAttribute("socialMember");
         SessionMember loginMember =(SessionMember) httpSession.getAttribute("loginMember");
-        //어짜피 model 에 보내줘야 할 내용은 공통된 테이블에 저장된 회원정보니 그냥 member 로 이름 통일
+        //어차피 model 에 보내줘야 할 내용은 공통된 테이블에 저장된 회원정보니 그냥 member 로 이름 통일
         String loginChk = (String) model.getAttribute("loginChk");
 
         if( socialMember != null){
             model.addAttribute("member", socialMember);
             model.addAttribute("loginChk","1");
+
+            return "redirect:/main";
+
         }else if(loginMember != null){
             model.addAttribute("member", loginMember);
             model.addAttribute("loginChk","1");
+
         }else if(loginChk!=null && loginChk.equals("2")){
             model.addAttribute("loginChk","2");
         }else{
@@ -66,11 +70,11 @@ public class loginController {
             httpSession.setAttribute("loginMember", sessionMember);
 
         if(sessionMember.getRole()== Role.ADMIN){
-            httpSession.setAttribute("admin",sessionMember);
+            httpSession.setAttribute("admin", sessionMember);
         }
+
         //return index(model,httpSession);
         return "redirect:/main";
-
 
     }
 

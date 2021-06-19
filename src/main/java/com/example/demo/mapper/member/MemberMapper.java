@@ -5,6 +5,7 @@ import com.example.demo.domain.member.dto.MemberDTO;
 import com.example.demo.domain.member.dto.MemberJoinDTO;
 import com.example.demo.domain.member.dto.MemberListDTO;
 import com.example.demo.domain.member.dto.UpdateInfoDTO;
+import com.example.demo.domain.member.dto.vo.Role;
 import com.example.demo.domain.member.entity.Member;
 
 import java.util.List;
@@ -30,4 +31,5 @@ public interface MemberMapper {
 
     public int remove(Long memberNo);
 
+    public Role adminChk(String MemberId);
 }

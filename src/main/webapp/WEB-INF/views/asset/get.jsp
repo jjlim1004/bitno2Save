@@ -93,7 +93,8 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script>
-window.onload = function(){
+
+$(document).ready(function(){
 
         var result ='${result}';
 
@@ -102,7 +103,7 @@ window.onload = function(){
             //console.log(result);
             return false;
         }
-}
+});
 
   var register_length = $(".register").length;
 

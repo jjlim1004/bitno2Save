@@ -36,7 +36,6 @@ public class AdminController {
     }
 
 
-
    //get
    @GetMapping(value ="/{member_id}", produces = {"application/json"})
    public String get(@PathVariable("member_id") String id){
@@ -71,6 +70,15 @@ public class AdminController {
         return memberService.delete(memberNo) ==1
                 ? new ResponseEntity<>("success", HttpStatus.OK)
                 : new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    @PostMapping("/adminChk")
+    @ResponseBody
+    public String adminChk(@RequestBody String memberId) {
+
+        String check = memberService.adminChk(memberId);
+        System.out.println("check:"+check);
+        return check;
     }
 
 }

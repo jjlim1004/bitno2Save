@@ -37,4 +37,6 @@ public interface MemberService {
 
     public int delete(Long memberNo);
 
+    public  String adminChk(String memberId);
+
 }

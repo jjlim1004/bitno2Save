@@ -19,7 +19,7 @@ import java.util.List;
 
 @Service
 @AllArgsConstructor
-public class MemberServiceImpl implements MemberService{
+public class MemberServiceImpl implements MemberService {
 
     @Autowired
     MemberMapper memberMapper;
@@ -117,4 +117,13 @@ public class MemberServiceImpl implements MemberService{
         return memberMapper.remove(memberNo);
     }
 
+    @Override
+    public String adminChk(String memberId) {
+        String role =  memberMapper.adminChk(memberId).toString();
+        System.out.println(role);
+        if (role == "ADMIN") {
+            return "1";
+        }
+        return "0";
+    }
 }

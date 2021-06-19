@@ -70,4 +70,13 @@ public class AccountServiceImpl implements AccountService{
         }
         return "0";
     }
+
+    @Override
+    public String accountChk(String memberId) {
+        AccountDTO accountInfo = mapper.findMemberAccountInfo(memberId);
+        if(accountInfo!=null){
+            return "1";
+        }
+        return "0";
+    }
 }

@@ -41,26 +41,8 @@
         <div class="row justify-content-center">
             <div class="col-md-7 col-lg-5">
                 <div class="login-wrap p-4 p-md-5">
-
-                    {{#socialMember}} <!--소셜멤버다 -->
-
-                    {{/socialMember}}
-
                     {{^socialMember}} <!--소셜멤버가 아니다-->
-
-                        {{#loginMember}}     <!--로그인멤버다-->
-
-                            {{^admin}}       <!--관리자가 아니다 (일반 사용자)-->
-
-                            {{/admin}}
-                            {{#admin}}       <!--관리자다-->
-
-                            {{/admin}}
-
-                        {{/loginMember}}
-
                         {{^loginMember}}
-
                             <div class="row">
                                 <div class="col-md">
                                     <form action="/login" method="post" id="loginForm">
@@ -84,8 +66,6 @@
                                             <div class="w-50 text-md-right">
                                                 <img src="/people.png" width="60px" onclick="location.href='/join'">
                                             </div>
-
-
                                         </div>
                                     </form>
                                 </div>
@@ -101,6 +81,7 @@
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script>
+
     function loginChk(){
         var form = document.getElementById("loginForm");
 
@@ -140,50 +121,16 @@
     }
 
 
-        var msg = {{loginChk}};
+    var msg = {{loginChk}};
 
-
-        var member_id = sessionStorage.getItem("member_id");
-
-        console.log(msg);
-        console.log("sessionStorage:" + member_id);
-
-        var regBtn = $("#regBtn");
-        var getBtn = $("#getBtn");
-        console.log("regBtn"+ regBtn);
-        console.log("getBtn"+ getBtn);
-
-
-    window.onload = function() {
+    window.onload = function(){
 
         if (msg == "2"){
             alert("로그인 실패!");
-
-        }else if(msg =="1"){
-
-/*
-            $.ajax({
-                url : '/asset/assetChk',
-                type: 'POST',
-                data: member_id,
-                contentType : "application/json; charset=UTF-8",
-                success : function(result){
-                    if(result == '1'){
-                         $("#regBtn").remove();
-                    } else if(result == '0'){
-                         $("#getBtn").remove();
-                    }
-                },
-                error: function(){
-                console.log("fail");
-                }
-            });
-*/
         }
     }
 
     $("#logout").on("click", function(){
-
         sessionStorage.removeItem("member_id");
     });
 

@@ -92,4 +92,8 @@
         delete from member where member_no = #{memberNo}
     </delete>
 
+    <select id="adminChk" resultType="com.example.demo.domain.member.dto.vo.Role">
+        select role from member where member_id = #{memberId}
+    </select>
+
 </mapper>

@@ -61,4 +61,9 @@
         where account_number = #{account_number}
     </select>
 
+    <select id= "findMemberAccountInfo" resultType="com.example.demo.domain.account.AccountDTO">
+        select * from account
+        where member_id= #{member_id}
+    </select>
+
 </mapper>
