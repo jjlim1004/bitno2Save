@@ -1,5 +1,5 @@
 cloud:
   aws:
     credentials:
-      accessKey: $AWS_ACCESS_KEY
-      secretKey: $AWS_SECRET_KEY
+      accessKey: AKIAWLRZXN4BSTJ236HY
+      secretKey: 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
